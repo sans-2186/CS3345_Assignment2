@@ -7,6 +7,7 @@
  */
 import java.util.Scanner;
 
+// Manages user inputs to switch data structures, perform manual CRUD operations, or launch benchmarks.
 public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
