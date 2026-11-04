@@ -30,10 +30,12 @@ public class NavigationAVL implements LocationIndex {
         return n == null ? 0 : n.height;
     }
 
+    // Calculates the height difference between left and right subtrees to ensure it stays between -1 and +1.
     private int getBalance(Node n) {
         return n == null ? 0 : height(n.left) - height(n.right);
     }
 
+    // Performs tree rotations (LL, RR, LR, RL) to restore balance after insertions and deletions
     private Node rightRotate(Node y) {
         Node x = y.left;
         Node T2 = x.right;

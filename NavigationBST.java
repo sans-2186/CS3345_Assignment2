@@ -35,6 +35,7 @@ public class NavigationBST implements LocationIndex {
         return count > oldSize;
     }
 
+    // Recursively finds the correct spot to insert while rejecting duplicate IDs.
     private Node insertRec(Node current, Location location) {
         if (current == null) {
             count++;
@@ -72,6 +73,7 @@ public class NavigationBST implements LocationIndex {
         return count < oldSize;
     }
 
+    // Handles the 3 deletion cases (leaf node, node with one child, and node with two children by finding the in-order successor).
     private Node deleteRec(Node current, int locationID) {
         if (current == null) return null;
 
@@ -116,6 +118,7 @@ public class NavigationBST implements LocationIndex {
         inOrderDisplay(root);
     }
 
+    // Recursively prints nodes in sorted order.
     private void inOrderDisplay(Node node) {
         if (node != null) {
             inOrderDisplay(node.left);

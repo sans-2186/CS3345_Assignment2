@@ -16,6 +16,7 @@ public class ExperimentRunner {
     private static final String[] SCALES = {"small", "medium", "large"};
     private static final int[] CAPACITIES = {2003, 10007, 20011};
 
+    // Loads the dataset files, executes 5 trials for insertion, search, and deletion across all 9 data structures, and outputs the results.
     public static void runAllExperiments() {
         System.out.println("==================================================");
         System.out.println(" CS3345 Navigation System - Assignment 2 Benchmarks");

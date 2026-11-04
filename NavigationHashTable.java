@@ -42,6 +42,7 @@ public class NavigationHashTable implements LocationIndex {
         }
     }
 
+    //Implements either Division Hashing (k (mod m)) or Universal Hashing (((a * k + b) (mod p) mod m))
     private int hash(int k) {
         long key = Math.abs((long) k);
         if (hashMethod == HashMethod.DIVISION) {
@@ -51,6 +52,7 @@ public class NavigationHashTable implements LocationIndex {
         }
     }
 
+    // Used specifically for Double Hashing collision resolution to calculate the step size.
     private int secondaryHash(int k) {
         long key = Math.abs((long) k);
         int r = 1;
@@ -68,6 +70,7 @@ public class NavigationHashTable implements LocationIndex {
         return true;
     }
 
+    // Implements the logic for Chaining (using custom linked nodes) and Open Addressing (Linear, Quadratic, and Double Hashing using arrays)
     @Override
     public synchronized boolean insert(Location location) {
         if (location == null) return false;

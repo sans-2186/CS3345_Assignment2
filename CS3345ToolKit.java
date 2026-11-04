@@ -7,6 +7,7 @@
  */
 public class CS3345ToolKit {
 
+    // Tracks execution time precisely using System.nanoTime()
     public static class Timer {
         private long startTime;
         private long elapsedTime;
@@ -25,6 +26,7 @@ public class CS3345ToolKit {
         }
     }
 
+    // Calculates minimum, maximum, and average values across 5 test trials
     public static class Statistics {
         private double[] values;
 

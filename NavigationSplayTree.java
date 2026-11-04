@@ -38,6 +38,7 @@ public class NavigationSplayTree implements LocationIndex {
         return y;
     }
 
+    // Executes Zig, Zig-Zig, and Zig-Zag operations to rotate a node up to the root.
     private Node splay(Node root, int key) {
         if (root == null || root.data.getLocationID() == key) return root;
 
@@ -93,6 +94,7 @@ public class NavigationSplayTree implements LocationIndex {
         return true;
     }
 
+    // Calls the splay operation so that successful searches automatically pull the location to the root
     @Override
     public synchronized Location search(int locationID) {
         if (root == null) return null;

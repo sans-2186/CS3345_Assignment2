@@ -32,6 +32,8 @@ public class Location implements Comparable<Location> {
      * @param locationID Unique integer identifier.
      * @param name Name of the location (typically "Location " + locationID).
      */
+
+    // Returns the integer key used for searching, hashing, and tree sorting.
     public Location(int locationID, String name) {
         this(locationID, name, 0.0, 0.0);
     }
@@ -68,6 +70,7 @@ public class Location implements Comparable<Location> {
         this.longitude = longitude;
     }
 
+    // Compares two location IDs to determine ordering in trees.
     @Override
     public int compareTo(Location other) {
         return Integer.compare(this.locationID, other.locationID);
